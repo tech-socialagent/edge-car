@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { ShowroomImg } from '../data';
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +20,11 @@ const Content = styled.p`
 `
 const Text = styled.p`
 `
+const MyIcon = styled.img.attrs(props => ({
+    src: props.Img,
+  }))`
+  width: 100%;
+  `;
 
 function Showroom() {
     return ( 
@@ -29,6 +35,7 @@ function Showroom() {
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </Content>
+           
         </Container>
      );
 }
