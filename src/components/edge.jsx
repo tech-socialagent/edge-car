@@ -16,7 +16,7 @@ const Header = styled.h1`
   text-decoration-thickness:2px;
 `
 const Content = styled.p`
-  width: 72%;
+  width: 100%;
 `
 const Elements = styled.div`
   display: flex;
