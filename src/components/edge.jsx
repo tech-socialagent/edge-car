@@ -1,27 +1,39 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { EdgeData } from '../data';
+import { devices } from '../devices';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 3rem;
+  @media ${devices.tablet}{
+    margin: 0rem 1rem;
+}
 `
 
 const Header = styled.h1`
   font-size: 40px;
   font-weight: medium;
-  text-decoration: underline;
-  text-decoration-color:red;
-  text-decoration-thickness:2px;
-`
+  width: max-content;
+  border-bottom: 2px solid red;
+  margin-bottom: 5px;`
+
 const Content = styled.p`
   width: 100%;
 `
 const Elements = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(30.333%, 1fr));
   gap: 1rem;
   margin: 1rem 0rem;
+  @media ${devices.tablet}{
+    grid-template-columns: repeat(auto-fill,minmax(45%, 1fr));
+  }
+  @media ${devices.mobileL}{
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const Element = styled.div`
@@ -41,6 +53,7 @@ const Title = styled.h3`
   margin-bottom: 6px;
 `
 const Description = styled.p`
+
 `
 const Line = styled.div`
 width: 80px;

@@ -99,135 +99,178 @@ export const QuoteImages = [
 export const brands = [
     {
         id: 1,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 2,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 3,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 4,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 5,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 6,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 7,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 8,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 9,
-        name: 'sony',
+        name: 'Sony',
         img : rectangle,
         title: 'Car Sun Shades',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 10,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 11,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 12,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 13,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 14,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 15,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 16,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 17,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 18,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
     },
     {
         id: 19,
-        name: 'samsung',
+        name: 'Samsung',
         img : car1,
         title: 'Car Sun Shades 1',
         desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris nis.',
+    },
+];
+
+export const Products = [
+    {
+        id : '1',
+        name : 'Sony'
+    },
+    {
+        id : '2',
+        name : 'Samsung'
+    },
+    {
+        id : '3',
+        name : 'JBL'
+    },
+    {
+        id : '4',
+        name : 'Pioneer'
+    },
+    {
+        id : '5',
+        name : 'Boss'
+    },
+    {
+        id : '6',
+        name : 'Alpine'
+    },
+    {
+        id : '7',
+        name : 'Focal'
+    },
+    {
+        id : '8',
+        name : 'Kicker'
+    },
+    {
+        id : '9',
+        name : 'Polk Audio'
+    },
+    {
+        id : '10',
+        name : 'JL Audio'
     },
 ]
