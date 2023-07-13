@@ -5,6 +5,7 @@ import ProductModel from './productModel';
 import { Products } from '../data.js';
 import { devices, devicesMin } from '../devices';
 import { FiFilter } from 'react-icons/fi';
+import { motion } from "framer-motion";
 
 const Container = styled.div`
     display: flex;
@@ -67,7 +68,7 @@ const Brand = styled.li`
     }
     cursor: pointer;
 `
-const ProductList = styled.div`
+const ProductList = styled(motion.div)`
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
@@ -193,7 +194,7 @@ const BrandTablet = styled.li`
 
 function Brands() {
 
-    const [currentBrand, setCurrentBrand] = useState("Sony");
+    const [currentBrand, setCurrentBrand] = useState("Audio");
     const [openModel,setOpenModel] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
     const [dropDown, setDropDown] = useState(false);
@@ -251,7 +252,11 @@ function Brands() {
                       ))}
                     </BrandList>
                 </BrandMenu>
-                <ProductList>
+                <ProductList
+                      initial={{y:70}}
+                      animate={{y:0}}
+                      transition={{duration: 1}}
+                >
                 {brands.map((data)=>(
                     data.name === currentBrand ?  
                     ( 
@@ -263,7 +268,7 @@ function Brands() {
                       <Line/>
                       </Element>) : null
                     ))}
-                    </ProductList>
+                </ProductList>
             </BrandContainer>
         </Container>
      );

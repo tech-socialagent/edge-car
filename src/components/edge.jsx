@@ -2,8 +2,9 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { EdgeData } from '../data';
 import { devices } from '../devices';
+import { motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin: 0 3rem;
@@ -22,7 +23,7 @@ const Header = styled.h1`
 const Content = styled.p`
   width: 100%;
 `
-const Elements = styled.div`
+const Elements = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(30.333%, 1fr));
   gap: 1rem;
@@ -42,8 +43,8 @@ const Element = styled.div`
   flex-direction: column;
   `
 const MyIcon = styled.img.attrs(props => ({
-    src: props.Img,
-  }))`
+  src: props.Img,
+}))`
   width: 100%;
   `;
 
@@ -65,29 +66,34 @@ const Horizontal = styled.hr`
   color: #FFFFFF;`
 
 function Edge() {
-    return (
-        <Container>
-            <Header>
-                Edge <span style={{color:'red'}}>X</span>clusive
-            </Header>
-            <Content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </Content>
-            <Elements>
-                {EdgeData.map((data)=>(
-                <Element>
-                    <MyIcon Img={data.img}/>
-                    <Title>{data.title}</Title>
-                    <Line/>
-                    <Description>{data.content}</Description>
-                </Element>
-                ))}
-            </Elements>
-            <Horizontal/>
-        </Container> 
-     );
+
+  return (
+    <Container
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Header>
+        Edge <span style={{ color: 'red' }}>X</span>clusive
+      </Header>
+      <Content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </Content>
+      <Elements>
+        {EdgeData.map((data,id) => (
+          <Element key={id}>
+            <MyIcon Img={data.img} />
+            <Title>{data.title}</Title>
+            <Line />
+            <Description>{data.content}</Description>
+          </Element>
+        ))}
+      </Elements>
+      <Horizontal />
+    </Container>
+  );
 }
 
 export default Edge;

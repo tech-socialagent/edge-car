@@ -9,6 +9,7 @@ const PageContainer = styled.div`
   align-items: center;
   background-image: url(${carBackground});
   background-size: cover;
+  background-position: 60% 0%;
   margin-top:0px;
   padding: 30px;
   @media ${devices.tablet}{
