@@ -5,6 +5,8 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import phoneIcon from '../assests/phone.png';
 import clockIcon from '../assests/timing.png';
 import { devices, devicesMin } from '../devices';
+import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
   background-color: #f2f2f2;
@@ -152,6 +154,9 @@ const FooterParagraph = styled.p`
   font-size: 14px;
   color: #555;
   text-align: ${(props) => (props.alignRight ? 'right' : 'left')};
+  &:hover{
+    color: red;
+  }
 `;
 
 const FooterContact = styled.div`
@@ -225,10 +230,8 @@ const Footer = () => {
             <FooterLogo>
               <LogoImage src={logo} alt="Logo" />
               <FooterText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
-              </FooterText>
+                At Edge Car Care Accessories, we are dedicated to providing you with the best car accessories to enhance your driving experience.
+                Contact our friendly support team for any inquiries or assistance. We value your privacy and have implemented secure shopping and data protection measures. Stay connected with us on social media for the latest updates and promotions.              </FooterText>
             </FooterLogo>
             <FooterSocial>
               <FollowUsText>Follow Us on</FollowUsText>
@@ -255,11 +258,21 @@ const Footer = () => {
             <FooterRow>
               <div>
                 <FooterHeading>QUICK LINK</FooterHeading>
-                <FooterParagraph>Home</FooterParagraph>
-                <FooterParagraph>Products</FooterParagraph>
-                <FooterParagraph>Testimonials</FooterParagraph>
-                <FooterParagraph>Location</FooterParagraph>
-                <FooterParagraph>Get Quote</FooterParagraph>
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                  <FooterParagraph>Home</FooterParagraph>
+                </Link>
+                <Link to="/products" style={{ textDecoration: 'none' }}>
+                  <FooterParagraph>Products</FooterParagraph>
+                </Link>
+                <HashLink smooth to="/#testimonials" style={{ textDecoration: 'none' }}>
+                  <FooterParagraph>Testimonials</FooterParagraph>
+                </HashLink>
+                <HashLink smooth to="/#quote" style={{ textDecoration: 'none' }}>
+                  <FooterParagraph>Get Quote</FooterParagraph>
+                </HashLink>
+                <HashLink smooth to="/#Location" style={{ textDecoration: 'none' }}>
+                  <FooterParagraph>Location</FooterParagraph>
+                </HashLink>
               </div>
             </FooterRow>
             <FooterRow>
@@ -285,25 +298,25 @@ const Footer = () => {
         </Container>
       </FooterContainer>
       <FooterSocialTablet>
-      <FollowUsText>Follow Us on</FollowUsText>
-      <SocialIcons style={{marginLeft: '40px'}}>
-        <SocialIconItem>
-          <SocialLink href="#">
-            <FaFacebook />
-          </SocialLink>
-        </SocialIconItem>
-        <SocialIconItem>
-          <SocialLink href="#">
-            <FaTwitter />
-          </SocialLink>
-        </SocialIconItem>
-        <SocialIconItem>
-          <SocialLink href="#">
-            <FaInstagram />
-          </SocialLink>
-        </SocialIconItem>
-      </SocialIcons>
-    </FooterSocialTablet>
+        <FollowUsText>Follow Us on</FollowUsText>
+        <SocialIcons style={{ marginLeft: '40px' }}>
+          <SocialIconItem>
+            <SocialLink href="#">
+              <FaFacebook />
+            </SocialLink>
+          </SocialIconItem>
+          <SocialIconItem>
+            <SocialLink href="#">
+              <FaTwitter />
+            </SocialLink>
+          </SocialIconItem>
+          <SocialIconItem>
+            <SocialLink href="#">
+              <FaInstagram />
+            </SocialLink>
+          </SocialIconItem>
+        </SocialIcons>
+      </FooterSocialTablet>
       <FooterSecondaryContainer>
         <CopyRightContainer>
           <CopyRightText>© EdgeCarCareAccessories</CopyRightText>

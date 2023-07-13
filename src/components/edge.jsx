@@ -46,6 +46,7 @@ const MyIcon = styled.img.attrs(props => ({
   src: props.Img,
 }))`
   width: 100%;
+  border: 1px solid #ffffff4e;
   `;
 
 const Title = styled.h3`
@@ -77,10 +78,7 @@ function Edge() {
         Edge <span style={{ color: 'red' }}>X</span>clusive
       </Header>
       <Content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </Content>
+      Welcome to Edge Car Accessories, your one-stop shop for high-quality car accessories. Whether you're looking to upgrade your vehicle's performance, enhance its appearance, or improve its functionality, we have everything you need to take your car to the next level. Explore our wide range of car accessories and discover the perfect additions to make your ride truly stand out on the road.      </Content>
       <Elements>
         {EdgeData.map((data,id) => (
           <Element key={id}>

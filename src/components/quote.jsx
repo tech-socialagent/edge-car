@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { devices } from '../devices';
+import emailjs from "emailjs-com";
 
 const QuoteContainer = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const QuoteContainer = styled.div`
   margin: 0rem 3rem;
   margin-bottom: 2rem;
   @media ${devices.tablet} {
-    margin: 0rem 0.2rem;
+    margin: 0rem 1rem;
   }
 `;
 
@@ -31,7 +32,7 @@ const Main = styled.div`
   @media ${devices.laptop} {
     grid-template-columns: 250px auto;
   }
-  @media ${devices.tablet} {
+  @media (max-width: 850px) {
     display: flex !important;
     flex-direction: column;
     margin: 0 1rem !important;
@@ -73,39 +74,29 @@ const Form = styled.form`
 `;
 
 const Menus = styled.div`
-  display: grid;
-  grid-template-columns: 47% 47%;
-  gap: 3rem;
-  @media ${devices.tablet} {
+  display: flex;
+  gap: 2%;
+  @media (max-width: 430px) {
+    flex-direction: column;
     gap: 1rem;
   }
 `;
 
 const MenyuItem = styled.div`
+  flex:1;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap : 10px;
   color-scheme: dark;
 `;
 
 const Input = styled.input`
-  width: 97%;
   height: 30px;
-  outline: none;
-  border: 1px #ffffff solid;
   background-color: transparent;
+  outline: none;
+  border: 1px solid #ffffff4e;
+  border-radius: 10px;
   padding: 5px 10px;
-  border-radius: 5px;
-  color: #3d3c3c;
-  @media ${devices.tablet} {
-    width: 250px;
-  }
-  @media (max-width: 670px) {
-    width: 200px;
-  }
-  @media (max-width: 570px) {
-    width: 150px;
-  }
 `;
 
 const Label = styled.span`
@@ -113,19 +104,7 @@ const Label = styled.span`
   font-weight: lighter;
 `;
 
-const Message = styled.input`
-  width: 100%;
-  height: 80px;
-  outline: none;
-  border: 1px #ffffff solid;
-  background-color: transparent;
-  padding: 0px 10px;
-  border-radius: 5px;
-  color: #3d3c3c;
-  @media ${devices.tablet} {
-    width: 90%;
-  }
-`;
+
 
 const Button = styled.button`
   width: 250px;
@@ -137,6 +116,7 @@ const Button = styled.button`
   padding: 5px 0px;
   margin-top: 10px;
   border-radius: 5px;
+  cursor: pointer;
   @media ${devices.laptop} {
     width: 200px;
   }
@@ -164,12 +144,12 @@ function Quote() {
 
   const [formData, setFormData] = useState({
     name: '',
-    phone:'',
+    phone: '',
     email: '',
-    date:'',
-    p_require:'',
-    number:'',
-    message:'',
+    date: '',
+    p_require: '',
+    number: '',
+    message: '',
   });
 
   const handleInputChange = (event) => {
@@ -179,18 +159,20 @@ function Quote() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData); // Access the form data
-
-    setFormData({
-        name: '',
-        phone:'',
-        email: '',
-        date:'',
-        p_require:'',
-        number:'',
-        message:'',
+    emailjs.send("service_364xzd8", "template_n2v1ixd",formData,"VwBZmlFFiOgq5YPW6")
+      .then(() => {
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          date: '',
+          p_require: '',
+          number: '',
+          message: '',
+        });
+      }, (error) => {
+        console.log(error.text);
       });
-
   };
 
   return (
@@ -210,25 +192,25 @@ function Quote() {
           <Menus>
             <MenyuItem>
               <Label>Name</Label>
-              <Input 
-                type="text" 
-                placeholder="Full name" 
+              <Input
+                type="text"
+                placeholder="Full name"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-            />
+              />
             </MenyuItem>
             <MenyuItem>
               <Label>Phone</Label>
-              <Input 
-                type="tel" 
-                placeholder="9876543210" 
+              <Input
+                type="tel"
+                placeholder="9876543210"
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
                 required
-            />
+              />
             </MenyuItem>
           </Menus>
           <Menus>
@@ -242,18 +224,18 @@ function Quote() {
                 value={formData.date}
                 onChange={handleInputChange}
                 required
-            />
+              />
             </MenyuItem>
             <MenyuItem>
               <Label>Email id</Label>
-              <Input 
-                type="email" 
-                placeholder="Type Email id" 
+              <Input
+                type="email"
+                placeholder="Type Email id"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-            />
+              />
             </MenyuItem>
           </Menus>
           <Menus>
@@ -265,29 +247,30 @@ function Quote() {
                 name="p_require"
                 value={formData.p_require}
                 onChange={handleInputChange}
-                required    
-            />
+                required
+              />
             </MenyuItem>
             <MenyuItem>
               <Label>No. Of Products Required</Label>
-              <Input 
-                type="tel" 
-                placeholder="Total No. Of Products " 
+              <Input
+                type="tel"
+                placeholder="Total No. Of Products "
                 name="number"
                 value={formData.number}
                 onChange={handleInputChange}
-                required    
-            />
+                required
+              />
             </MenyuItem>
           </Menus>
           <MenyuItem>
             <Label>Message</Label>
-            <Message 
-                type="text" 
-                placeholder="Include a message..." 
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
+            <Input
+              type="text"
+              placeholder="Include a message..."
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              style={{height: '50px'}}
             />
           </MenyuItem>
           <Button type='submit'>Quote</Button>

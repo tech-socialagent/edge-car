@@ -46,9 +46,7 @@ function Showroom() {
             <Header>Showroom</Header>
             <Text>“Its One Reason To Work With Us.”</Text>
             <Content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Experience exceptional customer service and find the perfect car accessories to elevate your driving experience. Shop with us and enjoy quality products, expert guidance, and a seamless shopping journey.
             </Content>
             <ImageContainer>
             {ShowroomImg.map((each)=>(

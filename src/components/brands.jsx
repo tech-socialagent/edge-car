@@ -94,6 +94,7 @@ const ImgContainer = styled.div`
     width: 100%;
     height: 270px;
     overflow:hidden;
+    border: 1px solid #ffffff4e;
 `
   
 const MyIcon = styled.img.attrs(props => ({
@@ -221,10 +222,7 @@ function Brands() {
                 Our Products
             </Header>
             <Content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </Content>
+              Discover our premium selection of car accessories designed to elevate your vehicle's performance, style, and functionality. From sleek exterior upgrades to cutting-edge electronics and interior enhancements, our products are meticulously curated to meet the highest standards of quality. Explore our collection and find the perfect additions to transform your car into a reflection of your personal style.            </Content>
             <DropdownContainer>
               <SubHeading>
                 Brands

@@ -8,59 +8,68 @@ import { styled } from 'styled-components';
 
 const Container = styled.div`
   width: 100%;
-  height: 550px;
+  height: 100vh;
   background-image: ${({ backgroundImages }) => `url(${backgroundImages})`};  
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  background-position: 0px -100px;
+  background-size: cover; 
+  background-position:center;
 `
 
 const Content = styled.div`
+  max-width: 30%;
   display: flex;
   flex-direction: column;
-  padding: 15% 15%;
+  gap: 8px;
+  padding: 15% 8%;
+  @media (max-width: 750px) {
+    display: none;
+  }
 `
 
 const Title = styled.div`
-  font-size: 50px;
+  margin:0;
+  font-size: 45px;
   color: #f01f36;
   font-weight: 700;
 `
 
 const Paragraph = styled.p`
+  margin:0;
+  font-size: 25px;
+  color: #000;
 `
 
 function Header() {
 
-    const backgroundImages = [
-        car0,
-        car1,
-        car2,
-        car3,
-      ];
+  const backgroundImages = [
+    car0,
+    car1,
+    car2,
+    car3,
+  ];
 
-      const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-      useEffect(() => {
-        const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) =>
-          (prevIndex + 1) % backgroundImages.length
-          );
-         }, 3000);
-      
-        return () => clearInterval(interval);
-      });
-      
-    return ( 
-        <Container backgroundImages={backgroundImages[currentImageIndex]}>
-            <Navbar/>
-            <Content>
-              <Title>Title</Title>
-              <Paragraph>Paragraph</Paragraph>
-            </Content>
-        </Container>
-     );
-  }
-  
-  export default Header;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % backgroundImages.length
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  });
+
+  return (
+    <Container backgroundImages={backgroundImages[currentImageIndex]}>
+      <Navbar />
+      <Content>
+        <Title>Elevate Your Drive</Title>
+        <Paragraph>Discover premium car accessories to enhance your vehicle's performance, style, and comfort.</Paragraph>
+      </Content>
+    </Container>
+  );
+}
+
+export default Header;

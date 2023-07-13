@@ -22,7 +22,7 @@ const Heading = styled.h2`
 const RowContainer = styled.div`
   display: grid;
   grid-template-columns: 65% 35%;
-  @media ${devices.mobileL}{
+  @media ${devices.tablet}{
     display : flex !important;
     flex-direction: column;
     gap: 0px;
@@ -31,16 +31,19 @@ const RowContainer = styled.div`
 
 const MapContainer = styled.div`
   height: 350px;
-  @media ${devices.mobileL}{
+  @media ${devices.tablet}{
     height: 250px;
   }
 `;
 
 const InfoContainer = styled.div`
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   @media ${devices.mobileL}{
-    margin-top: 0px;
+    margin-top: 20px;
   }
 `;
 

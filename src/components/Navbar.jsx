@@ -14,7 +14,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  background-color: ${({navbarcolor}) => (navbarcolor ? "white" : "transaprent")}; 
+  background-color: ${({navbarcolor}) => (navbarcolor ? "white" : "#0000004e")}; 
   transition: all 0.2s ease-in-out;
   z-index: 1;
   @media ${devices.tablet} {
@@ -195,7 +195,9 @@ function Navbar(props) {
         <HashLink smooth to="/#Location" style={{ textDecoration: 'none', color: "white" }}>
           <MenuItem>Location</MenuItem>
         </HashLink>
-        <Button onClick={handleCall}>Call Now</Button>
+        <a href='tell:9008536537'>
+          <Button onClick={handleCall}>Call Now</Button>
+        </a>
         <HashLink smooth to="/#quote">
           <Button1 navbarcolor={navbarcolor} >Get Quote</Button1>
         </HashLink>

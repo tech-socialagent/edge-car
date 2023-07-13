@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import carBackground from '../assests/car-background.png';
+import carBackground from '../assests/car3.png';
 import { devices } from '../devices';
 
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(${carBackground});
+  background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(${carBackground});
   background-size: cover;
   background-position: 60% 0%;
   margin-top:0px;
   padding: 30px;
   @media ${devices.tablet}{
-    margin: 0rem 1rem;
+    padding: 5px;
 }
 `;
 
@@ -25,7 +25,7 @@ const ContentContainer = styled.div`
 
 const Heading = styled.h1`
   color: #ffffff;
-  margin-bottom: 30px;
+  margin: 10px 0px;
   font-size: 40px;
   font-weight: medium;
   border-bottom: 2px solid red;
@@ -35,8 +35,7 @@ const Heading = styled.h1`
 const SectionContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
-  gap: 80px;
+  gap: 40px;
   @media ${devices.tablet}{
     flex-direction : column;
     gap: 5px;
@@ -86,21 +85,13 @@ const AboutUs = () => {
           <Section>
             <SectionHeading>Who we are</SectionHeading>
             <SectionParagraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat exercitation ullamco laboris nis.Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat exercitation ullamco laboris
-              nis.
+              Edge Car Accessories is a leading online retailer of car accessories, dedicated to providing car enthusiasts with top-notch products and exceptional customer service. With our extensive industry knowledge and commitment to quality, we strive to meet and exceed the expectations of our customers. We source our products from reputable manufacturers to ensure durability, performance, and style.
             </SectionParagraph>
           </Section>
           <Section>
-            <SectionHeading>Who we are</SectionHeading>
+            <SectionHeading>Our Mission</SectionHeading>
             <SectionParagraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat exercitation ullamco laboris nis.
-            </SectionParagraph>
+              Our mission is to provide car enthusiasts with the highest quality car accessories, offering a wide selection of products that enhance performance, style, and functionality. We strive to exceed customer expectations by delivering exceptional value, outstanding customer service, and a seamless shopping experience.            </SectionParagraph>
           </Section>
         </SectionContainer>
         <Section>
@@ -109,55 +100,39 @@ const AboutUs = () => {
             <Section>
               <SectionHeading>Audio System</SectionHeading>
               <SectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat exercitation ullamco laboris nis.
+                Experience an immersive audio journey on the road with our state-of-the-art audio systems. From crisp highs to deep lows, our premium audio systems deliver unparalleled sound quality, transforming your car into a concert hall on wheels.
               </SectionParagraph>
             </Section>
             <Section>
               <SectionHeading>Seat Covers</SectionHeading>
               <SectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat exercitation ullamco laboris nis.
-              </SectionParagraph>
+                Protect and personalize your car's interior with our stylish and durable seat covers. Add a touch of comfort and enhance the aesthetic appeal of your vehicle.              </SectionParagraph>
             </Section>
           </SectionContainer>
           <SectionContainer>
             <Section>
               <SectionHeading>Sun Film</SectionHeading>
               <SectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat exercitation ullamco laboris nis.
-              </SectionParagraph>
+                Stay cool and protected from harmful UV rays with our high-quality sun films. Enjoy enhanced privacy, reduced glare, and a cooler interior for a more comfortable drive.              </SectionParagraph>
             </Section>
             <Section>
               <SectionHeading>Add-Ons</SectionHeading>
               <SectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat exercitation ullamco laboris nis.
-              </SectionParagraph>
+                Take your car to the next level with our range of add-ons. From chrome trims to LED lighting, personalize your vehicle with eye-catching enhancements that make it truly yours.              </SectionParagraph>
             </Section>
           </SectionContainer>
         </Section>
         <Section>
           <SectionHeading>Why Us</SectionHeading>
           <SectionParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat exercitation ullamco laboris nis.Lorem ipsum dolor sit amet.
-          </SectionParagraph>
+            Our commitment to exceptional quality, extensive product selection, and outstanding customer service ensures a seamless and satisfying experience. Experience the difference with our knowledgeable team, top-notch products, and dedication to your satisfaction.          </SectionParagraph>
           <BulletList>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
-            <BulletPoint>Wide range of products available</BulletPoint>
+            <BulletPoint>Competitive Pricing</BulletPoint>
+            <BulletPoint>Fast Shipping</BulletPoint>
+            <BulletPoint>Secure Shopping</BulletPoint>
+            <BulletPoint>Regular Discounts</BulletPoint>
+            <BulletPoint>Knowledgeable Staff</BulletPoint>
+            <BulletPoint>Customer Satisfaction</BulletPoint>
           </BulletList>
         </Section>
       </ContentContainer>

@@ -26,18 +26,19 @@ const HoverImg = styled.img.attrs(props => ({
 }))`
   width: 40%;
   height: max-content-height;
-  border-radius: 20px;
+  border: 1px solid #ffffff4e;
   @media ${devices.tablet} {
     width: 90%;
   }
 `
 const HoverContent = styled.div`
   display: flex;
-  flex-direction: column;`
+  flex-direction: column;
+`
 
 const HoverDescription = styled.p`
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 100;
 `
 
 const HoverButton = styled.button`
@@ -52,7 +53,7 @@ const HoverButton = styled.button`
 `
 const Title = styled.h3`
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 6px;
 `
 
