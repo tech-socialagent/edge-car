@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import car0 from "../assests/banner/banner1.png"
-import car1 from "../assests/banner/banner2.png"
-import car2 from "../assests/banner/banner3.png"
-import car3 from "../assests/banner/banner4.png"
+import car0 from "../assests/banner/banner1.webp"
+import car1 from "../assests/banner/banner2.webp"
+import car2 from "../assests/banner/banner3.webp"
+import car3 from "../assests/banner/banner4.webp"
 import Navbar from './Navbar';
 import { styled } from 'styled-components';
 

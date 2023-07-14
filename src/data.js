@@ -1,7 +1,6 @@
-import rectangle from "./assests/rectangle.png";
-import car1 from "./assests/car0.jpg";
-import car2 from "./assests/car1.png";
-import car3 from "./assests/car3.png";
+import car1 from "./assests/car0.webp";
+import car2 from "./assests/car1.webp";
+import car3 from "./assests/car3.webp";
 //Showroom Images
 import showroom1 from "./assests/showroom/showroom1.webp";
 import showroom from "./assests/showroom/showroom.webp";
@@ -31,7 +30,6 @@ import image14 from "./assests/webp/image14.webp";
 import image1 from "./assests/webp/image1.webp";
 import image8 from "./assests/webp/image8.webp";
 import image9 from "./assests/webp/image9.webp";
-import image15 from "./assests/webp/image15.webp";
 //motors
 import artBoard8 from "./assests/webp/Artboard 8.webp";
 import artBoard10 from "./assests/webp/Artboard 10.webp";

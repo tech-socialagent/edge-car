@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import logo from '../assests/logo.png';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
