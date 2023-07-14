@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { styled } from 'styled-components';
 import { brands } from '../data';
 import ProductModel from './productModel';
@@ -6,6 +6,7 @@ import { Products } from '../data.js';
 import { devices, devicesMin } from '../devices';
 import { FiFilter } from 'react-icons/fi';
 import { motion } from "framer-motion";
+import ProductContext from '../context';
 
 const Container = styled.div`
     display: flex;
@@ -195,7 +196,8 @@ const BrandTablet = styled.li`
 
 function Brands() {
 
-    const [currentBrand, setCurrentBrand] = useState("Audio");
+    const { value } = useContext(ProductContext);
+    const [currentBrand, setCurrentBrand] = useState(value);
     const [openModel,setOpenModel] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
     const [dropDown, setDropDown] = useState(false);

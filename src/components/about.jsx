@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import carBackground from '../assests/car3.png';
+import carBackground from '../assests/car3.webp';
 import { devices } from '../devices';
 
 const PageContainer = styled.div`

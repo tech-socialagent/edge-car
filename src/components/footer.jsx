@@ -5,7 +5,6 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import phoneIcon from '../assests/phone.png';
 import clockIcon from '../assests/timing.png';
 import { devices, devicesMin } from '../devices';
-import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
@@ -153,6 +152,7 @@ const FooterHeading = styled.h2`
 const FooterParagraph = styled.p`
   font-size: 14px;
   color: #555;
+  cursor: pointer;
   text-align: ${(props) => (props.alignRight ? 'right' : 'left')};
   &:hover{
     color: red;
@@ -212,6 +212,9 @@ const CopyRightText = styled.p`
   font-size: 14px;
   color: #000;
   margin-right: 40px;
+  @media ${devices.tablet}{
+    margin:0px 5px;
+  }
 `;
 
 const RightAlignedCopyRightText = styled.p`
@@ -222,6 +225,17 @@ const RightAlignedCopyRightText = styled.p`
 `;
 
 const Footer = () => {
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = element.offsetTop - 70;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <FooterContainer>
@@ -264,15 +278,9 @@ const Footer = () => {
                 <Link to="/products" style={{ textDecoration: 'none' }}>
                   <FooterParagraph>Products</FooterParagraph>
                 </Link>
-                <HashLink smooth to="/#testimonials" style={{ textDecoration: 'none' }}>
-                  <FooterParagraph>Testimonials</FooterParagraph>
-                </HashLink>
-                <HashLink smooth to="/#quote" style={{ textDecoration: 'none' }}>
-                  <FooterParagraph>Get Quote</FooterParagraph>
-                </HashLink>
-                <HashLink smooth to="/#Location" style={{ textDecoration: 'none' }}>
-                  <FooterParagraph>Location</FooterParagraph>
-                </HashLink>
+                <FooterParagraph onClick={(e) => handleClick(e, "testimonials")}>Testimonials</FooterParagraph>
+                <FooterParagraph onClick={(e) => handleClick(e, "quote")}>Get Quote</FooterParagraph>
+                <FooterParagraph onClick={(e) => handleClick(e, "Location")}>Location</FooterParagraph>
               </div>
             </FooterRow>
             <FooterRow>
@@ -280,10 +288,12 @@ const Footer = () => {
                 <FooterHeading>CONTACT & INFORMATION</FooterHeading>
                 <FooterContact>
                   <img src={phoneIcon} alt="Phone Icon" style={{ width: '50px', height: '50px' }} />
-                  <div>
-                    <FooterContactText>Phone Number:</FooterContactText>
-                    <FooterContactText style={{ fontWeight: 600 }}>9008536537</FooterContactText>
-                  </div>
+                  <a href="tel:9008536537" style={{ textDecoration: 'none' }}>
+                    <div style={{ cursor: 'pointer' }}>
+                      <FooterContactText>Phone Number:</FooterContactText>
+                      <FooterContactText style={{ fontWeight: 600 }}>9008536537</FooterContactText>
+                    </div>
+                  </a>
                 </FooterContact>
                 <FooterTiming>
                   <img src={clockIcon} alt="Clock Icon" style={{ width: '50px', height: '50px' }} />
@@ -322,10 +332,11 @@ const Footer = () => {
           <CopyRightText>© EdgeCarCareAccessories</CopyRightText>
           <CopyRightText>All Right Reserved</CopyRightText>
         </CopyRightContainer>
-        <CopyRightContainer>
-          <RightAlignedCopyRightText>Terms of Use</RightAlignedCopyRightText>
-          <RightAlignedCopyRightText>Privacy Policy</RightAlignedCopyRightText>
-        </CopyRightContainer>
+        <Link to="/terms&Condition" style={{ textDecoration: 'none' }}>
+          <CopyRightContainer>
+            <RightAlignedCopyRightText>Terms of Use  &  Privacy Policy</RightAlignedCopyRightText>
+          </CopyRightContainer>
+        </Link>
       </FooterSecondaryContainer>
     </>
   );

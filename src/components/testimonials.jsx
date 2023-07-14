@@ -38,10 +38,12 @@ const Main = styled.div`
 const MyIcon = styled.img.attrs(props => ({
     src: props.Img,
 }))`
-  width: 450px;
+  min-width: 450px;
   height: 300px;
+  object-fit: cover;
+  border: 1px solid #ffffff4e;  
   @media ${devices.laptop}{
-    width: 350px
+    min-width: 350px
   }
   `;
 

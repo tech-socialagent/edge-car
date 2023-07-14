@@ -51,12 +51,13 @@ const MyIcon = styled.img.attrs(props => ({
   width: 300px;
   border-radius: 15px;
   margin: 0 auto; 
+  object-fit: cover;
   
   @media ${devices.laptop} {
     height: 250px;
     width: 250px;
   }
-  @media ${devices.tablet} {
+  @media (max-width: 850px){
     height: 250px;
     width: 350px;
   }
@@ -97,6 +98,9 @@ const Input = styled.input`
   border: 1px solid #ffffff4e;
   border-radius: 10px;
   padding: 5px 10px;
+  &:focus{
+    border: 1px solid white;
+  }
 `;
 
 const Label = styled.span`
@@ -117,6 +121,13 @@ const Button = styled.button`
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transiton : all 0.3s ease-in-out;
+  
+  &:hover{
+    border: 1px solid red;
+    color: red;
+  }
+
   @media ${devices.laptop} {
     width: 200px;
   }

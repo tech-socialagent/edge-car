@@ -1,7 +1,6 @@
-import rectangle from "./assests/rectangle.png";
-import car1 from "./assests/car0.jpg";
-import car2 from "./assests/car1.png";
-import car3 from "./assests/car3.png";
+import car1 from "./assests/car0.webp";
+import car2 from "./assests/car1.webp";
+import car3 from "./assests/car3.webp";
 //Showroom Images
 import showroom1 from "./assests/showroom/showroom1.webp";
 import showroom from "./assests/showroom/showroom.webp";
@@ -31,7 +30,6 @@ import image14 from "./assests/webp/image14.webp";
 import image1 from "./assests/webp/image1.webp";
 import image8 from "./assests/webp/image8.webp";
 import image9 from "./assests/webp/image9.webp";
-import image15 from "./assests/webp/image15.webp";
 //motors
 import artBoard8 from "./assests/webp/Artboard 8.webp";
 import artBoard10 from "./assests/webp/Artboard 10.webp";
@@ -42,20 +40,23 @@ export const EdgeData = [
     {
         id:1,
         img : image1,
-        title:'Car Sun Shades',
-        content:`Protect your car's interior from the scorching heat with our high-quality car sun shades. Keep your vehicle cool and comfortable while shielding it from harmful UV rays. Shop now and enjoy a cooler ride under the sun.`
+        product: 'Light',
+        title:'LED HeadLights',
+        content:`Upgrade your car's illumination with our high-performance headlights. These headlights feature advanced technology, providing bright and clear lighting for optimal visibility in various driving conditions.`
     },
     {
         id:2,
         img : image3,
-        title:'Sun Film',
-        content:`Upgrade your car's privacy, comfort, and style with our premium sun film options. Our high-quality sun films offer excellent heat rejection, reducing interior temperatures and protecting your vehicle from harmful UV rays.`
+        product : 'Dash Camera',
+        title:'Dash Cam',
+        content:`Capture every moment on the road with our reliable and feature-packed dash camera. This compact device records high-quality video footage of your driving adventures, providing an extra layer of security and peace of mind. `
     },
     {
         id:3,
-        img : image5,
-        title:'Floor Mats',
-        content:`Keep your car's interior clean and protected with our durable and stylish floor mats. Choose from a variety of designs and materials to suit your taste and vehicle. Enhance the aesthetics while preventing dirt, spills, and wear and tear.`
+        img : image4,
+        title:'Speakers',
+        product: 'Audio',
+        content:`Elevate your in-car audio experience with our premium audio products. Designed to deliver exceptional sound quality, our car audio systems and speakers provide immersive and powerful audio reproduction.`
     },
 ];
 
@@ -89,25 +90,25 @@ export const ShowroomImg = [
 export const TestimonialContent = [
     {
         id:1,
-        img : car1,
+        img : artBoard1,
         title:'What our client says about us',
         content:"Outstanding service and top-notch products! The team at Edge Car Care Accessories went above and beyond to help me find the perfect car accessories. Highly recommended!",
     },
     {
         id:2,
-        img : car2,
+        img : image1,
         title:'What our client says about us',
         content:"I couldn't be happier with my purchase from Edge Car Care Accessories. The quality of the products exceeded my expectations, and the customer support was exceptional. Will definitely be a returning customer!",
     },
     {
         id:3,
-        img : car3,
+        img : image3,
         title:'What our client says about us',
         content:"Impressed by the wide selection and competitive prices at Edge Car Care Accessories. The seat covers I ordered fit perfectly and added a stylish touch to my car's interior. Great value for money!",
     },
     {
         id:4,
-        img : car2,
+        img : artBoard8,
         title:'What our client says about us',
         content:"I recently purchased an audio system from Edge Car Care Accessories, and I'm blown away by the incredible sound quality. The installation was a breeze, and I can now enjoy my favorite music in perfect clarity. Thank you!",
     },

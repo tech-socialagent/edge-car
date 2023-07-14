@@ -60,6 +60,7 @@ const Menu = styled.div`
 const MenuItem = styled.div`
   cursor:pointer;
   transition: all 0.2s ease-in-out;
+  color: ${({navbarcolor}) => (navbarcolor ? 'black': 'white')};
   &:hover {
     color: red;
     scale: 1.05;
@@ -90,6 +91,12 @@ const Button1 = styled.button`
   background-color: transparent;    
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover {
+    border: red 1px solid;
+    color: red;
+  }
+
   @media ${devices.laptop} {
     display: none;
   }
@@ -151,29 +158,33 @@ function Navbar(props) {
     window.location.href = `tel:${phoneNumber}`;
   };
 
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = element.offsetTop - 70;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  };
+
 
   return (
-    <Container navbarcolor={navbarcolor}>
+    <Container navbarcolor={navbarcolor}> 
       <MyIcon Img={vector} navbarcolor={navbarcolor}/>
       <MyIconTablet Img ={logo} navbarcolor={navbarcolor}/>
       <div></div>
       <Menu style={{ color: navbarcolor ? 'black' : "white" }}>
-        <Link to="/" style={{ textDecoration: 'none', color: navbarcolor ? 'black' : "white" }}>
-          <MenuItem>Home</MenuItem>
+        <Link to="/" style={{ textDecoration: 'none'}}>
+          <MenuItem navbarcolor={navbarcolor}>Home</MenuItem>
         </Link>
         <Link to="/products" style={{ textDecoration: 'none', color: navbarcolor ? 'black' : "white" }}>
-          <MenuItem>Products</MenuItem>
+          <MenuItem navbarcolor={navbarcolor}>Products</MenuItem>
         </Link>
-        <HashLink smooth to="/#testimonials" style={{ textDecoration: 'none', color: navbarcolor ? 'black' : "white" }}>
-          <MenuItem>Testimonials</MenuItem>
-        </HashLink>
-        <HashLink smooth to="/#Location" style={{ textDecoration: 'none', color: navbarcolor ? 'black' : "white" }}>
-          <MenuItem>Location</MenuItem>
-        </HashLink>
+        <MenuItem navbarcolor={navbarcolor} onClick={(e) => handleClick(e,"testimonials")}>Testimonials</MenuItem>
+        <MenuItem navbarcolor={navbarcolor} onClick={(e) => handleClick(e,"Location")}>Location</MenuItem>
         <Button>Call Now</Button>
-        <HashLink smooth to="/#quote">
-          <Button1 navbarcolor={navbarcolor} >Get Quote</Button1>
-        </HashLink>
+        <Button1 navbarcolor={navbarcolor} onClick={(e) => handleClick(e,"quote")}>Get Quote</Button1>
       </Menu>
       <Icon navbarcolor={navbarcolor} onClick={()=> setOpen(true)} >
         <AiOutlineMenuFold />
@@ -195,7 +206,7 @@ function Navbar(props) {
         <HashLink smooth to="/#Location" style={{ textDecoration: 'none', color: "white" }}>
           <MenuItem>Location</MenuItem>
         </HashLink>
-        <a href='tell:9008536537'>
+        <a href="tel:9008536537" style={{textDecoration:'none'}}>
           <Button onClick={handleCall}>Call Now</Button>
         </a>
         <HashLink smooth to="/#quote">

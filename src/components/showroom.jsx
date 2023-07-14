@@ -34,10 +34,20 @@ const ImageContainer = styled.div`
   grid-template-columns: repeat(auto-fill,minmax(30.333%, 1fr));
   gap: 1rem`
 
+const SingleImage = styled.div`
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+`
+
 const MyIcon = styled.img.attrs(props => ({
     src: props.Img,
   }))`
   width: 100%;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.1)
+  }
   `;
 
 function Showroom() {
@@ -50,7 +60,9 @@ function Showroom() {
             </Content>
             <ImageContainer>
             {ShowroomImg.map((each)=>(
-              <MyIcon Img={each.img}/>
+              <SingleImage>
+                <MyIcon Img={each.img}/>
+              </SingleImage>
             ))}
             </ImageContainer>
         </Container>
