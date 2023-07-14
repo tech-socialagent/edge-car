@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { styled } from 'styled-components';
 import { EdgeData } from '../data';
 import { devices } from '../devices';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router';
+import ProductContext from '../context';
 
 const Container = styled(motion.div)`
   display: flex;
@@ -41,12 +43,24 @@ const Element = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
-  `
+  cursor: pointer;
+`
+
+const SingleImage = styled.div`
+  width: 100%;
+  border: 1px solid #ffffff4e;
+  overflow: hidden;
+`
+
 const MyIcon = styled.img.attrs(props => ({
   src: props.Img,
 }))`
   width: 100%;
-  border: 1px solid #ffffff4e;
+  transition: all 0.4s ease-in-out;
+
+  ${Element}:hover & {
+    transform: scale(1.1);
+  }
   `;
 
 const Title = styled.h3`
@@ -68,6 +82,15 @@ const Horizontal = styled.hr`
 
 function Edge() {
 
+  const navigate = useNavigate();
+  const { setValue } = useContext(ProductContext);
+
+  const handleClick = (event,param) => {
+    event.preventDefault();
+    setValue(param);
+    navigate('./products');
+  }
+
   return (
     <Container
       initial={{ opacity: 0, y: 50 }}
@@ -78,11 +101,13 @@ function Edge() {
         Edge <span style={{ color: 'red' }}>X</span>clusive
       </Header>
       <Content>
-      Welcome to Edge Car Accessories, your one-stop shop for high-quality car accessories. Whether you're looking to upgrade your vehicle's performance, enhance its appearance, or improve its functionality, we have everything you need to take your car to the next level. Explore our wide range of car accessories and discover the perfect additions to make your ride truly stand out on the road.      </Content>
+        Welcome to Edge Car Accessories, your one-stop shop for high-quality car accessories. Whether you're looking to upgrade your vehicle's performance, enhance its appearance, or improve its functionality, we have everything you need to take your car to the next level. Explore our wide range of car accessories and discover the perfect additions to make your ride truly stand out on the road.      </Content>
       <Elements>
         {EdgeData.map((data,id) => (
-          <Element key={id}>
+          <Element key={id} onClick={event => handleClick(event, data.product)}>
+          <SingleImage>
             <MyIcon Img={data.img} />
+          </SingleImage>  
             <Title>{data.title}</Title>
             <Line />
             <Description>{data.content}</Description>

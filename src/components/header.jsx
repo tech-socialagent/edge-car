@@ -44,9 +44,9 @@ function Header() {
 
   const backgroundImages = [
     car0,
+    car3,
     car1,
     car2,
-    car3,
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
