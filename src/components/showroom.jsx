@@ -1,19 +1,22 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { ShowroomImg } from '../data';
+import { devices } from '../devices';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 3rem;
+  margin: 0 3rem 2rem;
+  @media ${devices.tablet}{
+    margin: 0rem 1rem 2rem;
+}
 `
 
 const Header = styled.h1`
   font-size: 40px;
   font-weight: medium;
-  text-decoration: underline;
-  text-decoration-color:red;
-  text-decoration-thickness:2px;
+  border-bottom: 2px solid red;
+  width: max-content;
   margin-bottom: 5px;
 `
 const Content = styled.p`
@@ -27,14 +30,14 @@ const Text = styled.p`
 
 const ImageContainer = styled.div`
   width:100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(30.333%, 1fr));
   gap: 1rem`
 
 const MyIcon = styled.img.attrs(props => ({
     src: props.Img,
   }))`
-  width: 31.333%;
+  width: 100%;
   `;
 
 function Showroom() {
@@ -43,9 +46,7 @@ function Showroom() {
             <Header>Showroom</Header>
             <Text>“Its One Reason To Work With Us.”</Text>
             <Content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Experience exceptional customer service and find the perfect car accessories to elevate your driving experience. Shop with us and enjoy quality products, expert guidance, and a seamless shopping journey.
             </Content>
             <ImageContainer>
             {ShowroomImg.map((each)=>(

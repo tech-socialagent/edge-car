@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { brands } from '../data';
-import { HoverCard, Group } from '@mantine/core';
-import { HashLink } from 'react-router-hash-link';
 import ProductModel from './productModel';
+import { Products } from '../data.js';
+import { devices, devicesMin } from '../devices';
+import { FiFilter } from 'react-icons/fi';
+import { motion } from "framer-motion";
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 3rem;
+    @media ${devices.tablet}{
+      margin: 0rem 1rem;
+  }
 `
 const Header = styled.h1`
+  width: max-content;
   font-size: 40px;
   font-weight: medium;
-  text-decoration: underline;
-  text-decoration-color:red;
-  text-decoration-thickness:2px;
+  border-bottom: 1px solid red;
   margin-bottom: 5px;
   margin-top: 7rem;
 `
@@ -38,6 +42,9 @@ const BrandMenu = styled.div`
     width: 20%;
     border-top: 1px solid #FFFFFF;
     padding-top: 10px;
+    @media ${devices.tablet}{
+      display: none;
+    }
 `
 const BrandList = styled.ul`
     display: flex;
@@ -61,81 +68,153 @@ const Brand = styled.li`
     }
     cursor: pointer;
 `
-const ProductList = styled.div`
+const ProductList = styled(motion.div)`
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
     gap: 1rem;
     padding: 0 1rem;
+    margin-bottom: 3rem;
+    @media ${devices.laptop}{
+      grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
+    }
+    @media ${devices.tablet}{
+      width: 100%;
+      grid-template-columns: repeat(auto-fill,minmax(170px, 1fr));
+    }   
 `
 
 const Element = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  cursor: pointer;
   `
+const ImgContainer = styled.div`
+    width: 100%;
+    height: 270px;
+    overflow:hidden;
+    border: 1px solid #ffffff4e;
+`
+  
 const MyIcon = styled.img.attrs(props => ({
     src: props.Img,
   }))`
   width: 100%;
+  height:100%;
+  transition: all 0.5s ease-in-out;
+  ${Element} : hover & {
+    transform: scale(1.15)
+  }
   `;
 
 const Title = styled.h3`
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 6px;
+  transition: all 0.5s ease-in-out;
+  ${Element}:hover & {
+    color: red; 
+  }
 `
 
 const Line = styled.div`
   width: 80px;
   height: 0px;
-  border-top: 2px solid red`;
+  border-top: 4px solid red;
+  border-radius: 25%;
+  transition: all 0.5s ease-in-out; 
+  ${Element}:hover & {
+    width:120px;
+  }`
+;
 
-const HoverContainer = styled.div`
+const DropdownContainer = styled.div`
   display: flex;
-  gap:20px;
-  background-color: #000000;
-  color: #FFFFFF;
-  z-index: 9999;
+  flex-direction: column;
+  gap : .5rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  margin-bottom : 2rem; 
 `
-
-const HoverImg = styled.img.attrs(props => ({
-    src: props.Img,
-}))`
-  width: 50%;
-  height: max-content-height;
-`
-const HoverContent = styled.div`
+const DropdownMenu = styled.div`
+  width : 8rem;
+  height: 2rem;
   display: flex;
-  flex-direction: column;`
-
-const HoverDescription = styled.p`
-    font-size: 16px;
-    font-weight: normal;
+  justify-content: space-between;
+  gap : 7px;
+  align-items: center;
+  border-bottom : 2px solid #FFFFFF;
+  padding : 0px 6px;
+  @media ${devicesMin.tablet}{
+    display: none;
+  }
 `
 
-const HoverButton = styled.button`
-    margin-right:20px;
-    color: #ffffff;
-    padding: 7px 20px;
-    outline: none;
-    background-color: transparent;    
-    border: #ffffff 1px solid;
-    border-radius: 5px;
+const Button = styled.p`
+  font-size: 20px;
+  margin-top: 25px;
+  cursor: pointer;
+`
+const CurrentMenu = styled.p`
+  width : 6rem;
+  overflow: hidden;
+`
+
+const BrandListTablet = styled.ul`
+  width:70%;
+  font-size:16px;
+  gap : 20px;
+  font-weight: normal;
+  display: ${({toggle})=>(toggle ? 'grid' : 'none')};
+  grid-template-columns: repeat(auto-fill,minmax(25.333%, 1fr));
+  background-color: #FFFFFF30;
+  padding: 20px 20px;
+  border-radius: 20px;
+  @media ${devicesMin.tablet}{
+    display: none;
+  }
+`
+
+const BrandTablet = styled.li`
+    display: flex;
+    list-style:none;
+    transition: all 0.3s ease-in-out;
+    gap: 10px;
+    &::before {
+      content: "•"; 
+      color: #FFFFFF60;
+  }
+    &:hover {
+        color: red;
+        scale: 1.02;
+    }
     cursor: pointer;
 `
 
 
-
 function Brands() {
 
-    const [currentBrand, setCurrentBrand] = useState("sony");
+    const [currentBrand, setCurrentBrand] = useState("Audio");
     const [openModel,setOpenModel] = useState(false);
+    const [currentProduct, setCurrentProduct] = useState({});
+    const [dropDown, setDropDown] = useState(false);
 
     const handleClick = (event, param) => {
         event.preventDefault();
-        setCurrentBrand(param)
+        setCurrentBrand(param);
+        setDropDown(false);
       };
+
+    const handlePopup = (event,data) => {
+        event.preventDefault();
+        setCurrentProduct(data);
+        setOpenModel(true)
+    }
+
+    const toggleMenu = () => {
+      setDropDown(!dropDown);
+    };
 
     return ( 
         <Container>
@@ -143,59 +222,51 @@ function Brands() {
                 Our Products
             </Header>
             <Content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </Content>
-            <SubHeading>
+              Discover our premium selection of car accessories designed to elevate your vehicle's performance, style, and functionality. From sleek exterior upgrades to cutting-edge electronics and interior enhancements, our products are meticulously curated to meet the highest standards of quality. Explore our collection and find the perfect additions to transform your car into a reflection of your personal style.            </Content>
+            <DropdownContainer>
+              <SubHeading>
                 Brands
-            </SubHeading>
+              </SubHeading>
+              <DropdownMenu>
+                <CurrentMenu>
+                    {currentBrand}
+                </CurrentMenu>
+                <Button onClick={toggleMenu}>
+                  <FiFilter/>
+                </Button>
+              </DropdownMenu>
+              <BrandListTablet toggle={dropDown}>
+                      {Products.map((item,index)=>(
+                        <BrandTablet onClick={event => handleClick(event, item.name)}>{item.name}</BrandTablet>
+                      ))}
+              </BrandListTablet>
+            </DropdownContainer>
             <BrandContainer>
-                <ProductModel openModel={openModel} setOpenModel={setOpenModel}/>
+                <ProductModel openModel={openModel} setOpenModel={setOpenModel} product={currentProduct}/>
                 <BrandMenu>
                     <BrandList>
-                        <Brand onClick={event => handleClick(event, 'sony')}>Sony</Brand>
-                        <Brand onClick={event => handleClick(event, 'samsung')}>Samsung</Brand>
-                        <Brand onClick={event => handleClick(event, 'pioneer')}>Pioneer</Brand>
-                        <Brand onClick={event => handleClick(event, 'jbl')}>JBL</Brand>
-                        <Brand onClick={event => handleClick(event, 'boss')}>Boss</Brand>
-                        <Brand onClick={event => handleClick(event, 'alpine')}>Alpine</Brand>
-                        <Brand onClick={event => handleClick(event, 'focal')}>Focal</Brand>
-                        <Brand onClick={event => handleClick(event, 'kicker')}>Kicker</Brand>
-                        <Brand onClick={event => handleClick(event, 'polkAudio')}>Polk Audio</Brand>
-                        <Brand onClick={event => handleClick(event, 'jlAudio')}>JL Audio</Brand>
+                      {Products.map((item,index)=>(
+                        <Brand onClick={event => handleClick(event, item.name)}>{item.name}</Brand>
+                      ))}
                     </BrandList>
                 </BrandMenu>
-                <ProductList>
+                <ProductList
+                      initial={{y:70}}
+                      animate={{y:0}}
+                      transition={{duration: 1}}
+                >
                 {brands.map((data)=>(
-                    data.name === currentBrand ? 
-                    (
-                        <Group position="center">
-                        <HoverCard width={600} shadow="md" withArrow openDelay={400} closeDelay={100}>
-                          <HoverCard.Target>
-                                <Element  onClick={() => {setOpenModel(true)}}>
-                                <MyIcon Img={data.img}/>
-                                <Title>{data.title}</Title>
-                                <Line/>
-                                </Element>
-                          </HoverCard.Target>
-                          <HoverCard.Dropdown style={{backgroundColor:"#000000"}}>
-                                <HoverContainer>
-                                    <HoverImg Img={data.img}/>
-                                    <HoverContent>
-                                        <Title>{data.title}</Title>
-                                        <Line/>
-                                        <HoverDescription>{data.desc}</HoverDescription>
-                                        <HashLink smooth to="/#quote">
-                                        <HoverButton>Get Quote</HoverButton>
-                                        </HashLink>                        
-                                    </HoverContent>
-                                </HoverContainer>
-                          </HoverCard.Dropdown>
-                        </HoverCard>
-                      </Group>) : null
+                    data.name === currentBrand ?  
+                    ( 
+                      <Element onClick={event => handlePopup(event,data)}>
+                      <ImgContainer>
+                        <MyIcon Img={data.img}/>
+                      </ImgContainer>
+                      <Title>{data.title}</Title>
+                      <Line/>
+                      </Element>) : null
                     ))}
-                    </ProductList>
+                </ProductList>
             </BrandContainer>
         </Container>
      );
